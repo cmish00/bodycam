@@ -52,8 +52,8 @@
             }
 
             .container{
-                width: 500wh;
-                height: 500vh;
+                width: 100wh;
+                height: 100vh;
             }
         </style>
         <meta charset="utf-8">
@@ -72,9 +72,10 @@
             </div>
             <div class="top-right">
                 REC&nbsp;<i class="fa fa-circle text-danger Blink"></i>&nbsp;AXON BODY 4 [39457]&nbsp;&nbsp;<br />
+
                 <span style="padding:0px;margin:0px;" id="date-span">0000 XXX 00</span>
                 <span style="padding:0px;margin:0px;" id="time-span">00:00:00</span>
-                <span style="padding:0px;margin:0px;" id="tz">&nbsp;ZULU</span>&nbsp;&nbsp;
+                <span style="padding:0px;margin:0px;" id="tz">&nbspZULU</span>&nbsp;&nbsp;
             </div>
         </div>
     </body>
@@ -96,9 +97,6 @@
             d=new Date();
             updateTime();
             updateDate();
-            $('player', player);
-            $('agency', agency);
-            $('callsign', callsign);
             animate=setTimeout(clock,100);
         };
         
