@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- goto line 81 and be sure to edit your information -->
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&effect=outline" rel="stylesheet" type="text/css"> 
+    
+        <style>
+            @font-face {
+                font-family: instruction;
+                src: url(instruction.otf);
+            }
+            body { 
+                background-color: rgba(0, 0, 0, 0); 
+                margin: 0px auto; 
+                overflow: hidden; 
+                font-family: instruction, monospace;
+                font-size: 13px;
+                color: #AFAFAF;
+            }
+
+            .Blink {
+                animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+            }
+
+            @keyframes blinker {  
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+
+            .top-right{
+                float: right;
+                width: auto;
+                text-align: right;
+            }
+            
+            .top-right-container{
+                float: right;
+                width: auto;
+                text-align: right;
+                /* edit the fourth value of the next line to change opacity */
+                /* 0.0 is clear, 1.0 is completely opaque                   */
+                background-color: rgba(0,0,0,0.5);
+                padding: 5px;
+                margin: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius:10px;
+                border-radius:10px;
+            }
+
+            .container{
+                width: 100wh;
+                height: 100vh;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>AXON BODY 4 [39457]</title>
+    </head>
+
+    <body>
+    	<audio id="beep" autoplay loop>
+    		<source src="double-beep.wav" type="audio/wav">
+        </audio>
+        
+        <div class="top-right-container">
+            <div class="top-right">
+                <img src="data:image/png;base64,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" width="32" height="32" border="0">
+            </div>
+            <div class="top-right">
+                REC&nbsp;<i class="fa fa-circle text-danger Blink"></i>&nbsp;AXON BODY 4 [39457]&nbsp;&nbsp;<br />
+                <span style="padding:0px;margin:0px;" id="date-span">0000 XXX 00</span>
+                <span style="padding:0px;margin:0px;" id="time-span">00:00:00</span>
+                <span style="padding:0px;margin:0px;" id="tz">&nbsp;ZULU</span>&nbsp;&nbsp;
+            </div>
+        </div>
+    </body>
+    
+    <script>
+        //***edit this only for your information***
+        //***        end edit this only         ***
+    
+        var d,h,m,s,animate;
+        const monthNames = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+
+        function init(){
+            d=new Date();
+            t=d.toLocaleString('en-GB');
+            clock();
+        };
+
+        function clock(){
+            d=new Date();
+            updateTime();
+            updateDate();
+            $('player', player);
+            $('agency', agency);
+            $('callsign', callsign);
+            animate=setTimeout(clock,100);
+        };
+        
+        function updateDate(){
+            day=d.getDate();
+            month=monthNames[d.getMonth()];
+            year=d.getFullYear();
+            var d_str = day + " " + month + " " + year;
+            document.getElementById('date-span').innerHTML = d_str;
+        };
+        
+        function updateTime(){
+            h=d.getUTCHours();
+            m=d.getUTCMinutes();
+            s=d.getUTCSeconds();
+            if (h < 10) {
+                h = "0" + h;
+            }
+            if( m < 10 ) {
+                m = "0" + m;
+            }
+            if( s < 10 ) {
+                s = "0" + s;
+            }
+            var t_str = h + ":" + m + ":" + s + " ";
+            document.getElementById('time-span').innerHTML = t_str;
+        };
+
+        function $(id,val){
+            if(val<10){
+                val='0'+val;
+            }
+            document.getElementById(id).innerHTML=val;
+        };
+
+        window.onload=init;
+    </script>
+
+</html>
